@@ -62,8 +62,6 @@ int main(int argc, char *argv[]) {
         time_t now;
         char *current_time;
 
-        // fprintf(fp,"%s\n", inet_ntoa(clientAddr.sin_addr), ntohs(clientAddr.sin_port));
-
         while(1) {
             int len_n;
             ret = recv(client, &len_n, sizeof(len_n), 0);

@@ -9,7 +9,7 @@
 #include <arpa/inet.h>
 
 int main(int argc, char *argv[]) {
-    // tao socket
+    
     int listener = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if(listener == -1) {
         perror("socket() failed");
@@ -80,14 +80,12 @@ int main(int argc, char *argv[]) {
                 printf("connection with client %d closed!\n", i);
                 break;
             }
-            // char *storeFile = argv[3];
-            // FILE *fp2 = fopen(storeFile, "a");
+            
             if(ret < sizeof(buf))
                 buf[ret] = '\0';
             
             fprintf(fp2, "%s", buf);
             printf("%d bytes received and saved!\n", ret);
-            // fclose(fp2);
             
         }
         i++;
